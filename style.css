@@ -1,0 +1,165 @@
+/* Pawpresso — pawpresso.com
+   Brand: lavender #7C6BC4, coral #F2734C
+   Type: Fraunces (display) + DM Sans (body) — mirrors the app's design system */
+
+:root {
+  --lavender: #7C6BC4;
+  --lavender-deep: #5A4A9F;   /* AA-safe for large text on white */
+  --coral: #F2734C;           /* decorative only — not body text */
+  --ink: #2B2440;
+  --ink-soft: #56506B;
+  --paper: #FFFFFF;
+  --paper-tint: #F7F5FC;
+  --rule: #E6E2F2;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+a { color: var(--lavender-deep); text-underline-offset: 3px; }
+a:hover { color: var(--lavender); }
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--lavender);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.wrap {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  padding: 1.1rem 0;
+}
+.site-header .wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.wordmark {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.wordmark em {
+  font-style: italic;
+  font-weight: 900;
+  color: var(--lavender-deep);
+}
+.header-nav a {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-left: 1.1rem;
+}
+
+/* Document body */
+main { padding: 3rem 0 4rem; }
+
+h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 5vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.4rem;
+}
+.effective {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 0 0 2rem;
+}
+
+h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+  margin: 2.4rem 0 0.6rem;
+}
+h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 1.6rem 0 0.4rem;
+}
+p, li { color: var(--ink); }
+ul { padding-left: 1.3rem; }
+li { margin-bottom: 0.45rem; }
+li::marker { color: var(--coral); }
+
+/* Signature: the privacy thread */
+.thread {
+  background: var(--paper-tint);
+  border-left: 4px solid var(--lavender);
+  border-radius: 0 10px 10px 0;
+  padding: 1.1rem 1.3rem;
+  margin: 1.8rem 0;
+}
+.thread p {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--lavender-deep);
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.4rem 0 2.2rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-soft); }
+.pawprint { color: var(--coral); }
+
+/* Landing page */
+.landing {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.landing .wrap { max-width: 34rem; }
+.landing h1 {
+  font-size: clamp(2.6rem, 8vw, 4rem);
+  margin-bottom: 0.6rem;
+}
+.landing h1 em {
+  font-style: italic;
+  font-weight: 900;
+  color: var(--lavender-deep);
+}
+.landing .tagline {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  margin: 0 0 1.6rem;
+}
