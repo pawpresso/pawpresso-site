@@ -248,6 +248,7 @@ li::marker { color: var(--cta-primary); }
 }
 .site-footer a { color: var(--text-secondary); }
 .pawprint { color: var(--cta-primary); }
+.pawprint-on-dark { filter: grayscale(1) brightness(0) invert(1); }
 
 /* Landing hero */
 .landing {
