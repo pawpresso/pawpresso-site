@@ -18,12 +18,17 @@
       <p class="tagline reveal">your pets. their whole heart.</p>
       <p class="landing-subcopy reveal">Surprise photos of your pet, when you least expect them. Join the waitlist and be first to know when we launch on iOS.</p>
 
-      <form class="waitlist-form reveal" aria-label="Join the waitlist">
+      <form class="waitlist-form reveal" aria-label="Waitlist">
         <div class="waitlist-field">
-          <label for="waitlist-email">your email</label>
-          <input id="waitlist-email" name="email" type="email" autocomplete="email">
+          <label for="waitlist-email">Email address (optional)</label>
+          <input
+            id="waitlist-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+          >
         </div>
-        <button type="button">join waitlist</button>
+        <button type="submit">Join waitlist</button>
       </form>
     </div>
 
@@ -74,5 +79,14 @@
     </nav>
   </div>
 </footer>
+
+<script>
+  // No backend wired up yet — keep the button as a real submit control
+  // (so Enter-to-submit and assistive tech get correct semantics) but stop
+  // the default GET navigation until there's somewhere to actually send it.
+  document.querySelector('.waitlist-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+  });
+</script>
 </body>
 </html>
