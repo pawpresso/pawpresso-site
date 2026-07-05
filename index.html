@@ -1,92 +1,171 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pawpresso — surprise photos of your pet, on your schedule</title>
-<meta name="description" content="Pawpresso surfaces forgotten photos of your pet from your camera roll — entirely on your device. Join the waitlist and be first to know when we launch on iOS.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css">
-</head>
-<body>
-<main>
-  <section class="landing">
-    <div class="wrap">
-      <h1 class="reveal">Paw<span>presso</span></h1>
-      <p class="tagline reveal">your pets. their whole heart.</p>
-      <p class="landing-subcopy reveal">Surprise photos of your pet, when you least expect them. Join the waitlist and be first to know when we launch on iOS.</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pawpresso — surprise photos of your pet, on your schedule</title>
+    <meta
+      name="description"
+      content="Pawpresso surfaces forgotten photos of your pet from your camera roll — entirely on your device. Join the waitlist and be first to know when we launch on iOS."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,900&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="landing">
+        <div class="wrap">
+          <h1 class="reveal">Paw<span>presso</span></h1>
+          <p class="tagline reveal">your pets. their whole heart.</p>
+          <p class="landing-subcopy reveal">
+            Surprise photos of your pet, when you least expect them. Join the
+            waitlist and be first to know when we launch on iOS.
+          </p>
+          <p class="landing-subcopy">
+            We'll email you about Pawpresso launches and updates.
+          </p>
 
-      <form class="waitlist-form reveal" aria-label="Waitlist">
-        <div class="waitlist-field">
-          <label for="waitlist-email">Email address (optional)</label>
-          <input
-            id="waitlist-email"
-            name="email"
-            type="email"
-            autocomplete="email"
+          <form class="waitlist-form reveal" aria-label="Waitlist" novalidate>
+            <div class="waitlist-field">
+              <label for="waitlist-email">Email address (optional)</label>
+              <input
+                id="waitlist-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+              />
+            </div>
+            <input
+              type="text"
+              name="hpc4b27b6e-eb38-11e9-be00-06b4694bee2a"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+              style="position: absolute; left: -9999px"
+            />
+            <button type="submit">Join waitlist</button>
+          </form>
+          <p class="waitlist-success landing-subcopy" hidden aria-live="polite">
+            You're on the list 🐾
+          </p>
+          <p
+            class="waitlist-error waitlist-fineprint"
+            hidden
+            aria-live="polite"
           >
+            Something went wrong — try again?
+          </p>
         </div>
-        <button type="submit">Join waitlist</button>
-      </form>
-    </div>
 
-    <div class="landing-wave" aria-hidden="true">
-      <svg viewBox="0 0 100 80" preserveAspectRatio="none">
-        <path d="M0 80 L100 80 L100 10 Q50 90 0 10 Z"></path>
-      </svg>
-    </div>
-  </section>
+        <div class="landing-wave" aria-hidden="true">
+          <svg viewBox="0 0 100 80" preserveAspectRatio="none">
+            <path d="M0 80 L100 80 L100 10 Q50 90 0 10 Z"></path>
+          </svg>
+        </div>
+      </section>
 
-  <div class="floating-photos">
-    <img class="floating-photo photo-1" src="/images/pet-photo-1.jpg" alt="A cat being given a treat">
-    <img class="floating-photo photo-2" src="/images/pet-photo-2.jpg" alt="A cat curled up asleep">
-    <img class="floating-photo photo-3" src="/images/pet-photo-3.jpg" alt="A cat sitting attentively on a cushion">
-  </div>
-
-  <section class="how-it-works" aria-labelledby="how-it-works-title">
-    <h2 id="how-it-works-title" class="how-it-works-title">How it works</h2>
-    <div class="how-it-works-grid">
-      <div class="step step-lavender reveal">
-        <p class="step-number">01</p>
-        <h3 class="step-label">you choose the albums</h3>
-        <p class="step-desc">pawpresso only sees what you share</p>
+      <div class="floating-photos">
+        <img
+          class="floating-photo photo-1"
+          src="/images/pet-photo-1.jpg"
+          alt="Mochi, a gray tuxido cat, wearing a hat and being given a treat"
+        />
+        <img
+          class="floating-photo photo-2"
+          src="/images/pet-photo-2.jpg"
+          alt="Mochi curled up asleep"
+        />
+        <img
+          class="floating-photo photo-3"
+          src="/images/pet-photo-3.jpg"
+          alt="Mochisitting attentively on a cushion"
+        />
       </div>
-      <div class="step step-coral reveal">
-        <p class="step-number">02</p>
-        <h3 class="step-label">surprises on your schedule</h3>
-        <p class="step-desc">once a day, a few times a week — you decide</p>
-      </div>
-      <div class="step step-lavender reveal">
-        <p class="step-number">03</p>
-        <h3 class="step-label">always private</h3>
-        <p class="step-desc">your albums, your rules — change any time</p>
-      </div>
-    </div>
-  </section>
-</main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <p>© 2026 Pawpresso <span class="pawprint" aria-hidden="true">🐾</span></p>
-    <nav aria-label="Footer">
-      <ul>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/terms/">Terms</a></li>
-        <li><a href="mailto:hello@pawpresso.com">hello@pawpresso.com</a></li>
-      </ul>
-    </nav>
-  </div>
-</footer>
+      <section class="how-it-works" aria-labelledby="how-it-works-title">
+        <h2 id="how-it-works-title" class="how-it-works-title">How it works</h2>
+        <div class="how-it-works-grid">
+          <div class="step step-lavender reveal">
+            <p class="step-number">01</p>
+            <h3 class="step-label">you choose the albums</h3>
+            <p class="step-desc">pawpresso only sees what you share</p>
+          </div>
+          <div class="step step-coral reveal">
+            <p class="step-number">02</p>
+            <h3 class="step-label">surprises on your schedule</h3>
+            <p class="step-desc">once a day, a few times a week — you decide</p>
+          </div>
+          <div class="step step-lavender reveal">
+            <p class="step-number">03</p>
+            <h3 class="step-label">always private</h3>
+            <p class="step-desc">your albums, your rules — change any time</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-<script>
-  // No backend wired up yet — keep the button as a real submit control
-  // (so Enter-to-submit and assistive tech get correct semantics) but stop
-  // the default GET navigation until there's somewhere to actually send it.
-  document.querySelector('.waitlist-form').addEventListener('submit', (event) => {
-    event.preventDefault();
-  });
-</script>
-</body>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          © 2026 Pawpresso <span class="pawprint" aria-hidden="true">🐾</span>
+        </p>
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="/privacy/">Privacy</a></li>
+            <li><a href="/terms/">Terms</a></li>
+            <li>
+              <a href="mailto:hello@pawpresso.com">hello@pawpresso.com</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      const waitlistForm = document.querySelector(".waitlist-form");
+      const waitlistEmail = document.getElementById("waitlist-email");
+      const waitlistButton = waitlistForm.querySelector("button");
+      const waitlistSuccess = document.querySelector(".waitlist-success");
+      const waitlistError = document.querySelector(".waitlist-error");
+      const waitlistButtonLabel = waitlistButton.textContent;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      waitlistForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        waitlistError.hidden = true;
+
+        if (!emailPattern.test(waitlistEmail.value.trim())) {
+          return;
+        }
+
+        waitlistButton.disabled = true;
+        waitlistButton.textContent = "joining…";
+
+        const formData = new FormData(waitlistForm);
+
+        fetch(
+          "https://eocampaign1.com/form/ed9cdb1a-78af-11f1-9f7e-277624e80f79",
+          {
+            method: "POST",
+            body: formData,
+          },
+        )
+          .then((response) => {
+            if (!response.ok) throw new Error("Request failed");
+            waitlistForm.hidden = true;
+            waitlistSuccess.hidden = false;
+          })
+          .catch(() => {
+            waitlistButton.disabled = false;
+            waitlistButton.textContent = waitlistButtonLabel;
+            waitlistError.hidden = false;
+          });
+      });
+    </script>
+  </body>
 </html>

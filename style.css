@@ -5,7 +5,7 @@
 
 :root {
   /* ---- Primitives — Brand: Lavender ---- */
-  --lavender-500: #7B6CF6; /* Primary brand lavender */
+  --lavender-500: #3F3691; /* Primary brand lavender */
   --lavender-100: #EEE8FF; /* Lavender tint container */
   --lavender-50:  #F8F7FF; /* Near-white lavender surface */
 
@@ -41,7 +41,7 @@
   --bg-success:      var(--green-50);
   --bg-overlay:      var(--neutral-900);
   --bg-info-banner:  var(--neutral-050);
-  --bg-icon-subtle:  rgba(123, 108, 246, 0.15); /* lavender-500 @ 15% */
+  --bg-icon-subtle:  rgba(63, 54, 145, 0.15); /* lavender-500 @ 15% */
   --bg-toast-success: var(--green-500);
 
   /* ---- Semantic — Text ---- */
@@ -276,10 +276,8 @@ li::marker { color: var(--cta-primary); }
   font-weight: 900;
   color: var(--text-on-dark);
 }
-/* White on --accent-brand only reaches ~3.95:1 — short of the 4.5:1 normal-text
-   AA minimum, but comfortably clears the 3:1 large-text minimum. Every line
-   below is kept at/above the WCAG "large text" size threshold (18pt regular,
-   or 14pt/18.7px bold) so that exception legitimately applies. */
+/* White on --accent-brand reaches ~9.78:1, clearing AAA (7:1) for
+   normal text. */
 .landing .tagline {
   font-size: 1.625rem;
   font-weight: 700;
@@ -295,6 +293,7 @@ li::marker { color: var(--cta-primary); }
 }
 
 /* Waitlist form */
+.waitlist-form[hidden] { display: none; }
 .waitlist-form {
   display: flex;
   justify-content: center;
@@ -324,6 +323,15 @@ li::marker { color: var(--cta-primary); }
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
   color: var(--text-on-dark);
+  caret-color: var(--text-on-dark);
+  -webkit-text-fill-color: var(--text-on-dark);
+}
+.waitlist-field input:-webkit-autofill,
+.waitlist-field input:-webkit-autofill:hover,
+.waitlist-field input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-on-dark);
+  -webkit-box-shadow: 0 0 0 1000px var(--accent-brand) inset;
+  transition: background-color 9999s ease-in-out 0s;
 }
 .waitlist-form button {
   height: 3rem;
@@ -339,6 +347,11 @@ li::marker { color: var(--cta-primary); }
   box-shadow: var(--shadow-button);
 }
 .waitlist-form button:hover { background: var(--cta-hover); }
+.waitlist-fineprint {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0.75rem 0 0;
+}
 
 /* Curved seam between the hero and the white page below */
 .landing-wave {
