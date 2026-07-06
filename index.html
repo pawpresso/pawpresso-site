@@ -26,7 +26,7 @@
             Surprise photos of your pet, when you least expect them. Join the
             waitlist and be first to know when we launch on iOS.
           </p>
-          <p class="waitlist-consent">
+          <p class="waitlist-consent reveal">
             We'll email you about Pawpresso launches and updates.
           </p>
 
@@ -38,7 +38,17 @@
                 name="field_0"
                 type="email"
                 autocomplete="email"
+                required
+                aria-describedby="waitlist-email-error"
               />
+              <p
+                class="waitlist-field-error"
+                id="waitlist-email-error"
+                hidden
+                aria-live="polite"
+              >
+                <span aria-hidden="true">⚠</span> Please enter an email.
+              </p>
             </div>
             <input
               type="text"
@@ -50,7 +60,12 @@
             />
             <button type="submit">Join waitlist</button>
           </form>
-          <p class="waitlist-success landing-subcopy" hidden aria-live="polite">
+          <p
+            class="waitlist-success landing-subcopy"
+            hidden
+            aria-live="polite"
+            tabindex="-1"
+          >
             You're on the list
             <span class="pawprint-on-dark" aria-hidden="true">🐾</span>
           </p>
@@ -84,7 +99,7 @@
         <img
           class="floating-photo photo-3"
           src="/images/pet-photo-3.jpg"
-          alt="Mochisitting attentively on a cushion"
+          alt="Mochi sitting attentively on a cushion"
         />
         <img
           class="floating-photo photo-4"
@@ -138,14 +153,25 @@
       const waitlistButton = waitlistForm.querySelector("button");
       const waitlistSuccess = document.querySelector(".waitlist-success");
       const waitlistError = document.querySelector(".waitlist-error");
+      const waitlistFieldError = document.getElementById(
+        "waitlist-email-error",
+      );
       const waitlistButtonLabel = waitlistButton.textContent;
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      waitlistEmail.addEventListener("input", () => {
+        waitlistFieldError.hidden = true;
+        waitlistEmail.removeAttribute("aria-invalid");
+      });
 
       waitlistForm.addEventListener("submit", (event) => {
         event.preventDefault();
         waitlistError.hidden = true;
 
         if (!emailPattern.test(waitlistEmail.value.trim())) {
+          waitlistFieldError.hidden = false;
+          waitlistEmail.setAttribute("aria-invalid", "true");
+          waitlistEmail.focus();
           return;
         }
 
@@ -165,11 +191,13 @@
             if (!response.ok) throw new Error("Request failed");
             waitlistForm.hidden = true;
             waitlistSuccess.hidden = false;
+            waitlistSuccess.focus();
           })
           .catch(() => {
             waitlistButton.disabled = false;
             waitlistButton.textContent = waitlistButtonLabel;
             waitlistError.hidden = false;
+            waitlistButton.focus();
           });
       });
     </script>
