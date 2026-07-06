@@ -158,6 +158,7 @@ input:focus-visible {
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
+  max-width: 64rem;
 }
 .wordmark {
   font-family: "Fraunces", Georgia, serif;
@@ -175,6 +176,7 @@ input:focus-visible {
 
 /* Document body */
 main.legal { padding: 3rem 0 4rem; }
+main.legal .wrap { max-width: 64rem; }
 
 h1 {
   font-family: "Fraunces", Georgia, serif;
@@ -265,7 +267,6 @@ li::marker { color: var(--cta-primary); }
   padding: 4rem 1.25rem 9rem;
   overflow: hidden;
 }
-.landing .wrap { max-width: 40rem; }
 .landing h1 {
   font-family: "Fraunces", Georgia, serif;
   font-weight: 900;
