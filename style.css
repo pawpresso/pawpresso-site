@@ -292,6 +292,12 @@ li::marker { color: var(--cta-primary); }
   max-width: 35rem;
   margin: 0 auto 2rem;
 }
+.waitlist-consent {
+  font-size: 0.8rem;
+  opacity: 0.65;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
 
 /* Waitlist form */
 .waitlist-form[hidden] { display: none; }
@@ -384,27 +390,26 @@ li::marker { color: var(--cta-primary); }
   object-fit: cover;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-image-float);
-  opacity: 0;
+  opacity: 1;
 }
 .floating-photo.photo-1 {
   --rot: 0deg;
   transform: rotate(var(--rot));
-  animation: fadeUp 0.7s cubic-bezier(.2,.8,.2,1) 0.55s forwards,
-             floatSlow 5s ease-in-out 1.3s infinite;
 }
 .floating-photo.photo-2 {
   --rot: 5deg;
   margin-top: 2.125rem;
   transform: rotate(var(--rot));
-  animation: fadeUp 0.7s cubic-bezier(.2,.8,.2,1) 0.65s forwards,
-             floatSlow 4.5s ease-in-out 0.9s infinite;
 }
 .floating-photo.photo-3 {
   --rot: -3deg;
   margin-top: 0.75rem;
   transform: rotate(var(--rot));
-  animation: fadeUp 0.7s cubic-bezier(.2,.8,.2,1) 0.75s forwards,
-             floatSlow 5.5s ease-in-out 0.3s infinite;
+}
+.floating-photo.photo-4 {
+  --rot: 5deg;
+  margin-top: 2.125rem;
+  transform: rotate(var(--rot));
 }
 
 /* How it works */
@@ -463,10 +468,6 @@ li::marker { color: var(--cta-primary); }
   from { opacity: 0; transform: translateY(22px) rotate(var(--rot, 0deg)); }
   to   { opacity: 1; transform: translateY(0) rotate(var(--rot, 0deg)); }
 }
-@keyframes floatSlow {
-  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
-  50%      { transform: translateY(-10px) rotate(var(--rot, 0deg)); }
-}
 .reveal {
   opacity: 0;
   animation: fadeUp 0.7s cubic-bezier(.2, .8, .2, 1) forwards;
@@ -480,8 +481,7 @@ li::marker { color: var(--cta-primary); }
 .step.reveal:nth-child(3) { animation-delay: 0.34s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .floating-photo {
+  .reveal {
     animation: none;
     opacity: 1;
   }
@@ -507,7 +507,8 @@ li::marker { color: var(--cta-primary); }
     aspect-ratio: 1 / 1;
   }
   .floating-photo.photo-2,
-  .floating-photo.photo-3 { --rot: 0deg; margin-top: 0; }
+  .floating-photo.photo-3,
+  .floating-photo.photo-4 { --rot: 0deg; margin-top: 0; }
   .how-it-works { padding: 3rem 1.25rem 1rem; }
   .how-it-works-grid { grid-template-columns: 1fr; }
   .how-it-works-grid > *:first-child { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
